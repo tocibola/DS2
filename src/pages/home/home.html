@@ -1,16 +1,19 @@
 <ion-content padding>
-
+<div text-center margin-top>
   <ion-icon name="custom-mobile"></ion-icon>
+</div>
 
+<div text-center margin-top>
   <ion-item>
     <ion-label stacked>Matrícula</ion-label>
-    <ion-input [(ngModel)]="username"></ion-input>
+    <ion-input type="matricula" [(ngModel)]="matricula"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label stacked>Senha</ion-label>
     <ion-input type="password" [(ngModel)]="password"></ion-input>
   </ion-item>
+</div>
 
   <div text-center margin-top>
     <button ion-button margin-right (click)="goToTestePage()">

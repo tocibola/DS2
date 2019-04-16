@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { LoginProvider } from '../../providers/login/login';
 
 /**
  * Generated class for the TestePage page.
@@ -12,14 +13,35 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @Component({
   selector: 'page-teste',
   templateUrl: 'teste.html',
+  providers: [
+    LoginProvider,
+  ]
 })
+
 export class TestePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  private cpfUser = new Array<any>();
+  private cursoUser = new Array<any>();
+  private cepUser = new Array<any>();
+
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    private loginProvider: LoginProvider,
+    ) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TestePage');
+    this.loginProvider.getLoginUser().subscribe(
+      data => {
+        const response = (data as any);
+        this.cpfUser = response.cpf;
+        this.cursoUser = response.curso;
+        this.cepUser = response.enderecoCep;
+        console.log(response);
+      }, error => {
+        console.log("deu ruim!");
+      }
+    )
   }
 
 }
