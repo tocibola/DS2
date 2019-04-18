@@ -8,6 +8,8 @@ import { TestePage } from '../teste/teste';
 })
 export class HomePage {
     
+  private matricula:number;
+  private password:string;
   constructor(
     public navCtrl: NavController,
     ) 
@@ -15,7 +17,14 @@ export class HomePage {
   }
 
   goToTestePage(){
-    this.navCtrl.push(TestePage)
+    this.navCtrl.push(TestePage,{
+      userLogin: this.matricula, //user login é uma variavel local utilizada para passagem de valor, a mesma é usada por login.ts
+      senhaLogin: this.password,
+    });
+  }
+
+  testandoAlert(){
+    alert(this.matricula); 
   }
 
 

@@ -49,6 +49,7 @@ module.exports = webpackAsyncContext;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(156);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(28);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -60,6 +61,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 /*
   Generated class for the LoginProvider provider.
 
@@ -67,17 +69,26 @@ var __metadata = (this && this.__metadata) || function (k, v) {
   and Angular DI.
 */
 var LoginProvider = (function () {
-    function LoginProvider(http) {
+    function LoginProvider(http, navCtrl, navParams) {
         this.http = http;
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
         this.urlLogin = "http://200.159.247.135:8083/WebAcademico/rest/usuario/buscarPorLoginSenha/";
         console.log('Hello LoginProvider Provider');
+        var recebeValorUser = navParams.get('userLogin');
+        var recebeValorUserSenha = navParams.get('senhaLogin');
+        this.userMatricula = recebeValorUser;
+        this.userSenha = recebeValorUserSenha;
+        console.log(this.userSenha + ' - ' + this.userMatricula);
     }
     LoginProvider.prototype.getLoginUser = function () {
-        return this.http.get(this.urlLogin + "1701130027/GMC4620");
+        return this.http.get(this.urlLogin + this.userMatricula + "/" + this.userSenha);
     };
     LoginProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["g" /* NavParams */]])
     ], LoginProvider);
     return LoginProvider;
 }());
@@ -92,7 +103,7 @@ var LoginProvider = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__teste_teste__ = __webpack_require__(99);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -111,11 +122,17 @@ var HomePage = (function () {
         this.navCtrl = navCtrl;
     }
     HomePage.prototype.goToTestePage = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__teste_teste__["a" /* TestePage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__teste_teste__["a" /* TestePage */], {
+            userLogin: this.matricula,
+            senhaLogin: this.password,
+        });
+    };
+    HomePage.prototype.testandoAlert = function () {
+        alert(this.matricula);
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/home/gabriel/Documentos/Workspaces/Ionic/DS2/src/pages/home/home.html"*/`<ion-content padding>\n<div text-center margin-top>\n  <ion-icon name="custom-mobile"></ion-icon>\n</div>\n\n<div text-center margin-top>\n  <ion-item>\n    <ion-label stacked>Matrícula</ion-label>\n    <ion-input type="matricula" [(ngModel)]="matricula"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label stacked>Senha</ion-label>\n    <ion-input type="password" [(ngModel)]="password"></ion-input>\n  </ion-item>\n</div>\n\n  <div text-center margin-top>\n    <button ion-button margin-right (click)="goToTestePage()">\n      ACESSAR\n    </button>\n  </div>\n\n</ion-content>\n`/*ion-inline-end:"/home/gabriel/Documentos/Workspaces/Ionic/DS2/src/pages/home/home.html"*/,
+            selector: 'page-home',template:/*ion-inline-start:"/home/gabriel/Documentos/Workspaces/Ionic/DS2/src/pages/home/home.html"*/`<ion-content padding>\n<div text-center margin-top>\n  <ion-icon name="custom-mobile"></ion-icon>\n</div>\n\n<div text-center margin-top>\n  <ion-item>\n    <ion-label stacked>Matrícula</ion-label>\n    <ion-input type="matricula" placeholder="Mátricula" [(ngModel)]="matricula"></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label stacked>Senha</ion-label>\n    <ion-input type="password" placeholder="Senha" [(ngModel)]="password"></ion-input>\n  </ion-item>\n</div>\n\n  <div text-center margin-top>\n    <button ion-button margin-right (click)="goToTestePage()"> \n      ACESSAR\n    </button>\n  </div>\n\n</ion-content>\n`/*ion-inline-end:"/home/gabriel/Documentos/Workspaces/Ionic/DS2/src/pages/home/home.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
     ], HomePage);
@@ -132,7 +149,7 @@ var HomePage = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -202,9 +219,9 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(271);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(200);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(201);
@@ -278,7 +295,7 @@ var AppModule = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(196);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(199);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(200);
@@ -347,7 +364,7 @@ var MyApp = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TestePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_login_login__ = __webpack_require__(155);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -375,6 +392,9 @@ var TestePage = (function () {
         this.cpfUser = new Array();
         this.cursoUser = new Array();
         this.cepUser = new Array();
+        //let recebeValor = navParams.get('userLogin'); //testUser eh variavel local....
+        //this.testeUser = recebeValor;
+        //console.log(recebeValor);
     }
     TestePage.prototype.ionViewDidLoad = function () {
         var _this = this;
@@ -383,14 +403,15 @@ var TestePage = (function () {
             _this.cpfUser = response.cpf;
             _this.cursoUser = response.curso;
             _this.cepUser = response.enderecoCep;
-            console.log(response);
+            //console.log(response);
+            console.log(_this.testeUser);
         }, function (error) {
             console.log("deu ruim!");
         });
     };
     TestePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-teste',template:/*ion-inline-start:"/home/gabriel/Documentos/Workspaces/Ionic/DS2/src/pages/teste/teste.html"*/`<!--\n  Generated template for the TestePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>teste</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-card >\n\n    <ion-item>\n        <h2 class="teste_matricula">CPF: {{cpfUser}}</h2>\n        <h2 class="teste_matricula">Curso: {{cursoUser}}</h2>\n        <h2 class="teste_matricula">Cep: {{cepUser}}</h2>\n      </ion-item>\n\n    </ion-card>\n\n</ion-content>`/*ion-inline-end:"/home/gabriel/Documentos/Workspaces/Ionic/DS2/src/pages/teste/teste.html"*/,
+            selector: 'page-teste',template:/*ion-inline-start:"/home/gabriel/Documentos/Workspaces/Ionic/DS2/src/pages/teste/teste.html"*/`<!--\n  Generated template for the TestePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>teste</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-card >\n\n    <ion-item>\n        <h2 class="teste_matricula">CPF: {{cpfUser}}</h2>\n        <h2 class="teste_matricula">Curso: {{cursoUser}}</h2>\n        <h2 class="teste_matricula">Cep: {{cepUser}}</h2>  \n      </ion-item>\n\n    </ion-card>\n\n</ion-content>`/*ion-inline-end:"/home/gabriel/Documentos/Workspaces/Ionic/DS2/src/pages/teste/teste.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_2__providers_login_login__["a" /* LoginProvider */],
             ]

@@ -37,7 +37,7 @@ export class TestePage {
         this.cpfUser = response.cpf;
         this.cursoUser = response.curso;
         this.cepUser = response.enderecoCep;
-        console.log(response);
+        //console.log(response);
       }, error => {
         console.log("deu ruim!");
       }
