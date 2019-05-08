@@ -29,7 +29,7 @@ usada para receber o Login da variavel "userLogin", essa variavel é enviada pel
   }
 
   getLoginUser(){
-    return this.http.get(this.urlLogin + this.userMatricula + "/" + this.userSenha);
-  }
+      return this.http.get(this.urlLogin + this.userMatricula + "/" + this.userSenha);
+    }
 
 }

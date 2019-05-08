@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginProvider } from '../../providers/login/login';
+import { HomePage } from '../home/home';
+import { InicialPage } from '../inicial/inicial';
+import { AberturaRequerimentoPage } from '../abertura-requerimento/abertura-requerimento';
 
 /**
  * Generated class for the TestePage page.
@@ -39,9 +42,22 @@ export class TestePage {
         this.cepUser = response.enderecoCep;
         //console.log(response);
       }, error => {
-        console.log("deu ruim!");
+        alert("Usuario ou senha incorreto!");
+        //this.navCtrl.push(HomePage);
       }
     )
+  }
+
+  goToInicialPage(){
+    this.navCtrl.push(InicialPage,{
+
+    })
+  }
+
+  goToAberturaRequerimentoPage(){
+    this.navCtrl.push(AberturaRequerimentoPage,{
+      
+    })
   }
 
 }

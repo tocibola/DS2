@@ -12,20 +12,23 @@ export class HomePage {
   private password:string;
   constructor(
     public navCtrl: NavController,
-    ) 
-    {      
+    ) {      
   }
 
   goToTestePage(){
-    this.navCtrl.push(TestePage,{
-      userLogin: this.matricula, //user login é uma variavel local utilizada para passagem de valor, a mesma é usada por login.ts
-      senhaLogin: this.password,
-    });
+    if((this.matricula == null) || (this.password == "")){
+      alert("Por favor preencha matricula e senha");
+    }else(
+      this.navCtrl.push(TestePage,{
+        userLogin: this.matricula, //user login é uma variavel local utilizada para passagem de valor, a mesma é usada por login.ts
+        senhaLogin: this.password,
+      })
+    )
   }
 
   testandoAlert(){
-    alert(this.matricula); 
-  }
+    
+    }
 
 
 }

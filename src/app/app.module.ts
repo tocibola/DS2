@@ -11,6 +11,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TestePage } from '../pages/teste/teste';
 import { LoginProvider } from '../providers/login/login';
 import { HttpClientModule } from '@angular/common/http';
+import { AberturaRequerimentoPage } from '../pages/abertura-requerimento/abertura-requerimento';
+import { InicialPage } from '../pages/inicial/inicial';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomePage,
     ListPage,
     TestePage,
+    AberturaRequerimentoPage,
+    InicialPage,
   ],
   imports: [
     BrowserModule,
@@ -30,6 +34,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomePage,
     ListPage,
     TestePage,
+    AberturaRequerimentoPage,
+    InicialPage,
   ],
   providers: [
     StatusBar,

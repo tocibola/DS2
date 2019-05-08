@@ -7,7 +7,12 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>teste</ion-title>
+      <ion-buttons start>
+          <button ion-button menuToggle>
+              <ion-icon name="lalala"></ion-icon>
+            </button>
+          </ion-buttons>
+    <ion-title>Teste</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -24,5 +29,14 @@
       </ion-item>
 
     </ion-card>
+
+<!---->
+    <button ion-button margin-right (click)="goToInicialPage()"> 
+      Pagina Inicial
+    </button>
+
+    <button ion-button margin-right (click)="goToAberturaRequerimentoPage()"> 
+      Abertura de Requerimento
+    </button>
 
 </ion-content>
