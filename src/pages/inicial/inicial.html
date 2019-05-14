@@ -6,14 +6,38 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>inicial</ion-title>
-  </ion-navbar>
+  <ion-toolbar><!--Cria o botão de menu na pagina inicial, paginas do menu são adicionadas em app.components.ts -> this.page-->
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Requerimentos:</ion-title>
+  </ion-toolbar>
 
 </ion-header>
 
-
 <ion-content padding>
+    <ion-grid no-padding>
+        <ion-row>
+          <ion-col>Protocolo</ion-col>
+          <ion-col>Titulo</ion-col>
+          <ion-col>Status</ion-col>
+        </ion-row>
+        <!--<div *ngFor="let item of lista">
+          <ion-row>
+            <ion-col>{{ item.descricao }}</ion-col>
+            <ion-col>{{ item.qtd_valor }}</ion-col>
+            <ion-col>{{ item.total }}</ion-col>
+          </ion-row>
+        </div>-->
+      </ion-grid>
+
+      <button ion-button margin-right (click)="goToAberturaRequerimentoPage()"> 
+          Vizualizar
+        </button>
+    
+        <button ion-button margin-left (click)="goToAberturaRequerimentoPage()"> 
+          Novo
+        </button>
 
 </ion-content>
 

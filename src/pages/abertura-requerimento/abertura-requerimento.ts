@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { InicialPage } from '../inicial/inicial';
 
 /**
  * Generated class for the AberturaRequerimentoPage page.
@@ -22,4 +23,12 @@ export class AberturaRequerimentoPage {
     console.log('ionViewDidLoad AberturaRequerimentoPage');
   }
 
+  goToAberturaRequerimentoPage(){
+    this.navCtrl.push(AberturaRequerimentoPage,{
+    })
+  }
+  goToInicialPage(){
+    this.navCtrl.push(InicialPage,{
+    })
+  }
 }
