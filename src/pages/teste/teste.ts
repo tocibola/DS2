@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { LoginProvider } from '../../providers/login/login';
+import { LoginProvider } from '../../providers/loginProvider/loginProvider';
 import { InicialPage } from '../inicial/inicial';
 import { AberturaRequerimentoPage } from '../abertura-requerimento/abertura-requerimento';
 

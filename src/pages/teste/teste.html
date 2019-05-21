@@ -6,37 +6,35 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-      <ion-buttons start>
-          <button ion-button menuToggle>
-              <ion-icon name="lalala"></ion-icon>
-            </button>
-          </ion-buttons>
+  <ion-toolbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>Teste</ion-title>
-  </ion-navbar>
+  </ion-toolbar>
 
 </ion-header>
 
 
 <ion-content padding>
 
-  <ion-card >
+  <ion-card>
 
     <ion-item>
-        <h2 class="teste_CPF">CPF: {{cpfUser}}</h2>
-        <h2 class="teste_Curso">Curso: {{cursoUser}}</h2>
-        <h2 class="teste_CEP">Cep: {{cepUser}}</h2>  
-      </ion-item>
+      <h2 class="teste_CPF">CPF: {{cpfUser}}</h2>
+      <h2 class="teste_Curso">Curso: {{cursoUser}}</h2>
+      <h2 class="teste_CEP">Cep: {{cepUser}}</h2>
+    </ion-item>
 
-    </ion-card>
+  </ion-card>
 
-<!---->
-    <button ion-button margin-right (click)="goToInicialPage()"> 
-      Pagina Inicial
-    </button>
+  <!---->
+  <button ion-button margin-right (click)="goToInicialPage()">
+    Pagina Inicial
+  </button>
 
-    <button ion-button margin-right (click)="goToAberturaRequerimentoPage()"> 
-      Abertura de Requerimento
-    </button>
+  <button ion-button margin-right (click)="goToAberturaRequerimentoPage()">
+    Abertura de Requerimento
+  </button>
 
 </ion-content>

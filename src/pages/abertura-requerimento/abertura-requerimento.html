@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Abertura de requerimento</ion-title>
+    <ion-title>Abertura de Requerimento</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,30 +15,34 @@
 
 <ion-content padding>
 
+  <ion-list>
+    <!--criar combobox: https://ionicframework.com/docs/v3/api/components/select/Select/-->
     <ion-item>
-        <ion-label stacked>Tipo de Requerimento</ion-label>
+      <ion-label>Tipo Requerimento</ion-label>
+      <!--Necessario fazer puxar os dados do banco, verificar como fazer webservice para receber os dados-->
+      <ion-select [(ngModel)]="gaming">
+        <ion-option value="nes">NES</ion-option>
+        <ion-option value="n64">Nintendo64</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-item>
+      <ion-label stacked>Documentos Necessários:</ion-label>
+    </ion-item>
+
+
+
+    <ion-item>
+        <ion-label stacked>Descrição:</ion-label>
       </ion-item>
-    
-      <ion-list><!--criar combobox: https://ionicframework.com/docs/v3/api/components/select/Select/-->
-          <ion-item>
-            <ion-label>Tipo Requerimento</ion-label> <!--Necessario fazer puxar os dados do banco, verificar como fazer webservice para receber os dados-->
-            <ion-select [(ngModel)]="gaming">
-              <ion-option value="nes">NES</ion-option>
-              <ion-option value="n64">Nintendo64</ion-option>
-              <ion-option value="ps">PlayStation</ion-option>
-              <ion-option value="genesis">Sega Genesis</ion-option>
-              <ion-option value="saturn">Sega Saturn</ion-option>
-              <ion-option value="snes">SNES</ion-option>
-            </ion-select>
-          </ion-item>
-        </ion-list>
 
-        <ion-content>
+  <ion-content>
 
-          <button ion-button margin-right navPop>Cancelar</button>
-         
-         </ion-content>
-        <!--
+    <button ion-button margin-right navPop>Cancelar</button>
+
+  </ion-content>
+  <!--
     
         <button ion-button margin-left (click)> 
           Salvar

@@ -1,22 +1,23 @@
 <ion-content padding>
-<div text-center margin-top>
-  <ion-icon name="custom-mobile"></ion-icon>
-</div>
-
-<div text-center margin-top>
-  <ion-item>
-    <ion-label stacked>Matrícula</ion-label>
-    <ion-input type="matricula" placeholder="Mátricula" [(ngModel)]="matricula"></ion-input> <!--[(ngModel)] - usado para receber o valor na variavel mmatricula-->
-  </ion-item>
-
-  <ion-item>
-    <ion-label stacked>Senha</ion-label>
-    <ion-input type="password" placeholder="Senha" [(ngModel)]="password"></ion-input>
-  </ion-item>
-</div>
+  <div text-center margin-top>
+    <ion-icon name="custom-mobile"></ion-icon>
+  </div>
 
   <div text-center margin-top>
-    <button ion-button margin-right (click)="goToTestePage()"> 
+    <ion-item>
+      <ion-label stacked>Matrícula</ion-label>
+      <ion-input type="matricula" placeholder="Mátricula" [(ngModel)]="matricula"></ion-input>
+      <!--[(ngModel)] - usado para receber o valor na variavel mmatricula-->
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Senha</ion-label>
+      <ion-input type="password" placeholder="Senha" [(ngModel)]="password"></ion-input>
+    </ion-item>
+  </div>
+
+  <div text-center margin-top>
+    <button ion-button margin-right (click)="goToInicialPage()">
       ACESSAR
     </button>
   </div>

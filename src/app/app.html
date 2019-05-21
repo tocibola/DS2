@@ -1,11 +1,16 @@
 <ion-menu [content]="content">
   <ion-header>
     <ion-toolbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
       <ion-title>Menu</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content>
+    <!-- Htlml ta janela de menu-->
+      <ion-title>Teste lalala</ion-title>
     <ion-list>
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}

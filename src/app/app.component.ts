@@ -15,15 +15,16 @@ export class MyApp {
 
   rootPage: any = HomePage; //altera a pagina inicial
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
-    this.pages = [
+    this.pages = [ //local para criar os atalhos da barra de menu
       { title: 'Requerimentos', component: InicialPage },
       { title: 'Abertura de Requerimento', component: AberturaRequerimentoPage },
+      //{ title: 'Sobre o App', component: alert("App de requerimento desenvolvido pela turma de DS2.")},
       //{ title: 'List', component: ListPage }
     ];
 

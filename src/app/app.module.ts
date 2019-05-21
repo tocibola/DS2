@@ -9,10 +9,11 @@ import { ListPage } from '../pages/list/list';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { TestePage } from '../pages/teste/teste';
-import { LoginProvider } from '../providers/login/login';
+import { LoginProvider } from '../providers/loginProvider/loginProvider';
 import { HttpClientModule } from '@angular/common/http';
 import { AberturaRequerimentoPage } from '../pages/abertura-requerimento/abertura-requerimento';
 import { InicialPage } from '../pages/inicial/inicial';
+import { TipoRequerimentoProvider } from '../providers/tipoRequerimentoProvider/tipoRequerimentoProvider';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { InicialPage } from '../pages/inicial/inicial';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    LoginProvider
+    LoginProvider,
+    TipoRequerimentoProvider,
   ]
 })
 export class AppModule {}
