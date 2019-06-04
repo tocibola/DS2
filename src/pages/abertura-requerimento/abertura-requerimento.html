@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>aberturaRequerimento</ion-title>
+    <ion-title>Abertura Requerimento</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,9 +15,21 @@
 
 <ion-content padding>
 
+
+
     <ion-item>
         <ion-label stacked>Tipo de Requerimento</ion-label><!--criar combobox: https://ionicframework.com/docs/api/select#select-buttons-->
+        {{currentDate}}
       </ion-item>
+
+      <ion-card >
+
+        <ion-item>
+            <h2 class="teste_Matrícula">Matricula: {{matUser}}</h2>
+            <h2 class="teste_Data">Data: {{dataUser}}</h2>
+        </ion-item>
+    
+      </ion-card>
     
       <ion-item>
           <ion-label>Tipo de Requerimento</ion-label>

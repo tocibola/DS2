@@ -15,13 +15,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 
 
 var AberturaRequerimentoPageModule = (function () {
-    function AberturaRequerimentoPageModule() {
+    function AberturaRequerimentoPageModule(navCtrl) {
+        this.navCtrl = navCtrl;
+        this.currentDate = new Date();
     }
     AberturaRequerimentoPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-abertura-requerimento',
+            templateUrl: 'page-abertura-requerimento.html'
+        }),
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_2__abertura_requerimento__["a" /* AberturaRequerimentoPage */],
@@ -29,7 +39,8 @@ var AberturaRequerimentoPageModule = (function () {
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__abertura_requerimento__["a" /* AberturaRequerimentoPage */]),
             ],
-        })
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
     ], AberturaRequerimentoPageModule);
     return AberturaRequerimentoPageModule;
 }());

@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
+import { IonicPageModule, NavController } from 'ionic-angular';
 import { AberturaRequerimentoPage } from './abertura-requerimento';
+import { Component} from '@angular/core';
 
+@Component({
+  selector: 'page-abertura-requerimento',
+  templateUrl: 'page-abertura-requerimento.html'
+})
 @NgModule({
   declarations: [
     AberturaRequerimentoPage,
@@ -10,4 +15,9 @@ import { AberturaRequerimentoPage } from './abertura-requerimento';
     IonicPageModule.forChild(AberturaRequerimentoPage),
   ],
 })
-export class AberturaRequerimentoPageModule {}
+export class AberturaRequerimentoPageModule {
+  currentDate;
+  constructor(public navCtrl: NavController){
+    this.currentDate = new Date();
+  }
+}
