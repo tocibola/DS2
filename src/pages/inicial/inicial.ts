@@ -49,7 +49,6 @@ export class InicialPage {
 
     this.tipoRequerimentoProvider.getTipoRequerimento().subscribe(
       data => {
-        //alert("nem sei que erro eh esse");
         const response = (data as any);
         this.tipoReque = response[0].nome; //vai ser necessario uma estrutura de repetição....
         console.log('Tipo de requerimento[0] - ' + this.tipoReque);

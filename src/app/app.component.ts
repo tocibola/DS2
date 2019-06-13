@@ -6,18 +6,30 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import { InicialPage } from '../pages/inicial/inicial';
 import { AberturaRequerimentoPage } from '../pages/abertura-requerimento/abertura-requerimento';
+import { UserConfigProvider } from '../providers/userConfigProvider/userConfigProvider';
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  providers: [
+    UserConfigProvider,
+  ]
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
+
+  //private matricula: number;
+  //private password: string;
+
 
   rootPage: any = HomePage; //altera a pagina inicial
 
   pages: Array<{ title: string, component: any }>;
 
-  constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(
+    public platform: Platform,
+    public statusBar: StatusBar,
+    public splashScreen: SplashScreen,
+    public userConfigProvider: UserConfigProvider) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -34,6 +46,21 @@ export class MyApp {
     this.platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
+/*
+      let config = this.userConfigProvider.getConfigData();
+      if(config==null){
+        console.log("entrou no if");
+        this.rootPage = HomePage;
+        this.userConfigProvider.setConfigData(false);
+      }else{
+        console.log("entrou no else");
+        this.rootPage = InicialPage, {
+          userLogin: this.matricula,
+          senhaLogin: this.password,
+        };
+      }*/
+    
+
       this.statusBar.styleDefault();
       this.splashScreen.hide();
     });

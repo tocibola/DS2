@@ -14,6 +14,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AberturaRequerimentoPage } from '../pages/abertura-requerimento/abertura-requerimento';
 import { InicialPage } from '../pages/inicial/inicial';
 import { TipoRequerimentoProvider } from '../providers/tipoRequerimentoProvider/tipoRequerimentoProvider';
+import { RequerimentoProvider } from '../providers/requerimentoProvider/requerimentoProvider';
+import { UserConfigProvider } from '../providers/userConfigProvider/userConfigProvider';
+
 
 @NgModule({
   declarations: [
@@ -44,6 +47,7 @@ import { TipoRequerimentoProvider } from '../providers/tipoRequerimentoProvider/
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     LoginProvider,
     TipoRequerimentoProvider,
+    RequerimentoProvider,
   ]
 })
 export class AppModule {}

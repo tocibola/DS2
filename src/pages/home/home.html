@@ -1,5 +1,5 @@
 <ion-content padding>
-  <div text-center margin-top>
+  <div margin-right>
     <ion-icon name="custom-mobile"></ion-icon>
   </div>
 
@@ -17,6 +17,14 @@
   </div>
 
   <div text-center margin-top>
+      <ion-list>
+
+          <ion-item>
+            <ion-label stacked>Continuar logado</ion-label>
+            <ion-checkbox [(ngModel)]="Logado"></ion-checkbox>
+          </ion-item>
+        
+        </ion-list>
     <button ion-button margin-right (click)="goToInicialPage()">
       ACESSAR
     </button>
