@@ -15,7 +15,7 @@ import { AberturaRequerimentoPage } from '../pages/abertura-requerimento/abertur
 import { InicialPage } from '../pages/inicial/inicial';
 import { TipoRequerimentoProvider } from '../providers/tipoRequerimentoProvider/tipoRequerimentoProvider';
 import { RequerimentoProvider } from '../providers/requerimentoProvider/requerimentoProvider';
-import { UserConfigProvider } from '../providers/userConfigProvider/userConfigProvider';
+//import { UserConfigProvider } from '../providers/userConfigProvider/userConfigProvider';
 
 
 @NgModule({
