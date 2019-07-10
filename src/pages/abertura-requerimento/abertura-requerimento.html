@@ -19,16 +19,23 @@
     <!--criar combobox: https://ionicframework.com/docs/v3/api/components/select/Select/-->
     <ion-item>
       <ion-label>Tipo Requerimento</ion-label>
-      <!--Necessario fazer puxar os dados do banco, verificar como fazer webservice para receber os dados-->
-      <ion-select [(ngModel)]="gaming">
-        <ion-option value="nes">NES</ion-option>
-        <ion-option value="n64">Nintendo64</ion-option>
+      <!--Necessario fazer puxar os dados do banco, verificar como fazer webservice para receber os dados/video30-->
+      
+      <!--ion-select [(ngModel)]="requerimentos">
+        <ion-option> {{listaRequerimentos[0]}}</ion-option-->
+
+      <ion-select [(ngModel)]="requerimentos">
+        <ion-option *ngFor="let tipoRequerimento of listaRequerimentos" [value]="tipoRequerimento"></ion-option>
+      
+        <!--ion-select *ngFor="let tipoRequerimento of listaRequerimentos">
+        <ion-option [value]="tipoRequerimento"></ion-option-->
       </ion-select>
     </ion-item>
   </ion-list>
 
   <ion-item>
       <ion-label stacked>Documentos Necessários:</ion-label>
+      <!--TODO: quando selecionar o tipo d erequerimento carregar essa lista com os documentos referente ao tipo-->
     </ion-item>
 
 
@@ -38,7 +45,9 @@
 
   <ion-content>
 
-    <button ion-button margin-right navPop>Cancelar</button>
+    <button ion-button margin-right navPop>
+      Cancelar
+    </button>
 
   </ion-content>
   <!--

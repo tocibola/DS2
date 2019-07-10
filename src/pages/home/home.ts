@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { TestePage } from '../teste/teste';
 import { InicialPage } from '../inicial/inicial';
-import { UserConfigProvider } from '../../providers/userConfigProvider/userConfigProvider';
 import { LoginProvider } from '../../providers/loginProvider/loginProvider';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html',
+  providers: [
+    LoginProvider,
+  ]
 })
 export class HomePage {
 
@@ -17,6 +18,7 @@ export class HomePage {
 
   constructor(
     public navCtrl: NavController,
+    private loginProvider: LoginProvider,
   ) {
   }
 

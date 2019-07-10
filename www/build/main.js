@@ -55,7 +55,7 @@ module.exports = webpackAsyncContext;
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TipoRequerimentoProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(18);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -109,6 +109,7 @@ var TipoRequerimentoProvider = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__inicial_inicial__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loginProvider_loginProvider__ = __webpack_require__(48);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -121,9 +122,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var HomePage = (function () {
-    function HomePage(navCtrl) {
+    function HomePage(navCtrl, loginProvider) {
         this.navCtrl = navCtrl;
+        this.loginProvider = loginProvider;
     }
     HomePage.prototype.goToInicialPage = function () {
         if ((this.matricula == null) || (this.password == "")) {
@@ -140,8 +143,12 @@ var HomePage = (function () {
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-home',template:/*ion-inline-start:"/home/gabriel/Documentos/Workspaces/Ionic/DS2/src/pages/home/home.html"*/`<ion-content padding>\n  <div margin-right>\n    <ion-icon name="custom-mobile"></ion-icon>\n  </div>\n\n  <div text-center margin-top>\n    <ion-item>\n      <ion-label stacked>Matrícula</ion-label>\n      <ion-input type="matricula" placeholder="Mátricula" [(ngModel)]="matricula"></ion-input>\n      <!--[(ngModel)] - usado para receber o valor na variavel mmatricula-->\n    </ion-item>\n\n    <ion-item>\n      <ion-label stacked>Senha</ion-label>\n      <ion-input type="password" placeholder="Senha" [(ngModel)]="password"></ion-input>\n    </ion-item>\n  </div>\n\n  <div text-center margin-top>\n      <ion-list>\n\n          <ion-item>\n            <ion-label stacked>Continuar logado</ion-label>\n            <ion-checkbox [(ngModel)]="Logado"></ion-checkbox>\n          </ion-item>\n        \n        </ion-list>\n    <button ion-button margin-right (click)="goToInicialPage()">\n      ACESSAR\n    </button>\n  </div>\n\n</ion-content>`/*ion-inline-end:"/home/gabriel/Documentos/Workspaces/Ionic/DS2/src/pages/home/home.html"*/,
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_3__providers_loginProvider_loginProvider__["a" /* LoginProvider */],
+            ]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_loginProvider_loginProvider__["a" /* LoginProvider */]])
     ], HomePage);
     return HomePage;
 }());
@@ -157,7 +164,7 @@ var HomePage = (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TestePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_loginProvider_loginProvider__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_loginProvider_loginProvider__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__inicial_inicial__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__abertura_requerimento_abertura_requerimento__ = __webpack_require__(42);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -254,8 +261,8 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(198);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(201);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_teste_teste__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_loginProvider_loginProvider__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_common_http__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__providers_loginProvider_loginProvider__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_common_http__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_abertura_requerimento_abertura_requerimento__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_inicial_inicial__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_tipoRequerimentoProvider_tipoRequerimentoProvider__ = __webpack_require__(158);
@@ -281,6 +288,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+//import { UserConfigProvider } from '../providers/userConfigProvider/userConfigProvider';
 var AppModule = (function () {
     function AppModule() {
     }
@@ -556,7 +564,7 @@ var ListPage = (function () {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RequerimentoProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -599,8 +607,7 @@ var RequerimentoProvider = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__abertura_requerimento_abertura_requerimento__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loginProvider_loginProvider__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_tipoRequerimentoProvider_tipoRequerimentoProvider__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_loginProvider_loginProvider__ = __webpack_require__(48);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -614,7 +621,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 /**
  * Generated class for the InicialPage page.
  *
@@ -623,12 +629,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  */
 var InicialPage = (function () {
     //TipoRequerimentoProvider: any;
-    function InicialPage(navCtrl, navParams, tipoRequerimentoProvider, loginProvider) {
+    function InicialPage(navCtrl, navParams, loginProvider) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.tipoRequerimentoProvider = tipoRequerimentoProvider;
         this.loginProvider = loginProvider;
-        this.tipoReque = new Array();
         this.nomeUser = new Array();
     }
     InicialPage.prototype.ionViewDidLoad = function () {
@@ -642,13 +646,6 @@ var InicialPage = (function () {
         }, function (error) {
             alert("Erro no loginProvider - InicialTs");
         });
-        this.tipoRequerimentoProvider.getTipoRequerimento().subscribe(function (data) {
-            var response = data;
-            _this.tipoReque = response[0].nome; //vai ser necessario uma estrutura de repetição....
-            console.log('Tipo de requerimento[0] - ' + _this.tipoReque);
-        }, function (error) {
-            alert("Erro no tipoRequerimentoProvider - InicialTs");
-        });
     };
     InicialPage.prototype.goToAberturaRequerimentoPage = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__abertura_requerimento_abertura_requerimento__["a" /* AberturaRequerimentoPage */], {});
@@ -658,12 +655,10 @@ var InicialPage = (function () {
             selector: 'page-inicial',template:/*ion-inline-start:"/home/gabriel/Documentos/Workspaces/Ionic/DS2/src/pages/inicial/inicial.html"*/`<!--\n  Generated template for the InicialPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-toolbar>\n    <!--Cria o botão de menu na pagina inicial, paginas do menu são adicionadas em app.components.ts -> this.page-->\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Requerimentos:</ion-title>\n  </ion-toolbar>\n\n</ion-header>\n\n<ion-content padding>\n  <ion-grid no-padding>\n    <ion-row>\n      <ion-col>Protocolo</ion-col>\n      <ion-col>Titulo</ion-col>\n      <ion-col>Status</ion-col>\n    </ion-row>\n    <!--<div *ngFor="let item of lista">\n          <ion-row>\n            <ion-col>{{ item.descricao }}</ion-col>\n            <ion-col>{{ item.qtd_valor }}</ion-col>\n            <ion-col>{{ item.total }}</ion-col>\n          </ion-row>\n        </div>-->\n  </ion-grid>\n\n  <button ion-button margin-left (click)="goToAberturaRequerimentoPage()">\n    Vizualizar\n  </button>\n\n  <button ion-button margin-left (click)="goToAberturaRequerimentoPage()">\n    Novo\n  </button>\n\n</ion-content>`/*ion-inline-end:"/home/gabriel/Documentos/Workspaces/Ionic/DS2/src/pages/inicial/inicial.html"*/,
             providers: [
                 __WEBPACK_IMPORTED_MODULE_3__providers_loginProvider_loginProvider__["a" /* LoginProvider */],
-                __WEBPACK_IMPORTED_MODULE_4__providers_tipoRequerimentoProvider_tipoRequerimentoProvider__["a" /* TipoRequerimentoProvider */],
             ]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_4__providers_tipoRequerimentoProvider_tipoRequerimentoProvider__["a" /* TipoRequerimentoProvider */],
             __WEBPACK_IMPORTED_MODULE_3__providers_loginProvider_loginProvider__["a" /* LoginProvider */]])
     ], InicialPage);
     return InicialPage;
@@ -681,6 +676,7 @@ var InicialPage = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__inicial_inicial__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_tipoRequerimentoProvider_tipoRequerimentoProvider__ = __webpack_require__(158);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -693,6 +689,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the AberturaRequerimentoPage page.
  *
@@ -700,13 +697,45 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var AberturaRequerimentoPage = (function () {
-    function AberturaRequerimentoPage(navCtrl, navParams) {
+    function AberturaRequerimentoPage(navCtrl, navParams, tipoRequerimentoProvider) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.tipoRequerimentoProvider = tipoRequerimentoProvider;
+        this.nomeUser = new Array();
+        this.listaRequerimentos = new Array();
     }
     AberturaRequerimentoPage_1 = AberturaRequerimentoPage;
     AberturaRequerimentoPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad AberturaRequerimentoPage');
+        this.carregaListaRequerimento();
+        /*this.tipoRequerimentoProvider.getTipoRequerimento().subscribe(
+          data => {
+            const response = (data as any);
+            console.log('Tipo de requerimento antes erro');
+            //console.log(JSON.parse(response));
+            //this.tipoReque = response[0].nome; //TODO: vai ser necessario uma estrutura de repetição....
+            //const tipoReque = JSON.parse(response); //TODO: Verificar como utilizar dessa forma: JSON.parse(response._body)....
+            this.listaRequerimentos = response.nome; //TODO: Verificar como utilizar dessa forma: JSON.parse(response._body)....
+            console.log('Tipo de requerimento!! - ' + this.listaRequerimentos);
+            //this.listaRequerimentos = tipoReque.results;
+            //console.log('Tipo de requerimento[0] - ' + tipoReque.nomeUser);
+          }, error => {
+            alert("Erro no tipoRequerimentoProvider - InicialTs");
+          }
+        )*/
+    };
+    AberturaRequerimentoPage.prototype.carregaListaRequerimento = function () {
+        var _this = this;
+        console.log('Acessou a função carregaListaRequeriemnto');
+        this.tipoRequerimentoProvider.getTipoRequerimento().subscribe(function (data) {
+            var response = data;
+            for (var cont = 0; response[cont] != undefined; cont++) {
+                _this.listaRequerimentos[cont] = response[cont].nome; //TODO: Verificar como utilizar dessa forma: JSON.parse(response._body)....
+                console.log('Tipo de requerimento!! - ' + _this.listaRequerimentos);
+            } //fecha o loop
+        }, function (error) {
+            alert("Erro no tipoRequerimentoProvider - InicialTs");
+        });
     };
     AberturaRequerimentoPage.prototype.goToAberturaRequerimentoPage = function () {
         this.navCtrl.push(AberturaRequerimentoPage_1, {});
@@ -716,24 +745,27 @@ var AberturaRequerimentoPage = (function () {
     };
     AberturaRequerimentoPage = AberturaRequerimentoPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-abertura-requerimento',template:/*ion-inline-start:"/home/gabriel/Documentos/Workspaces/Ionic/DS2/src/pages/abertura-requerimento/abertura-requerimento.html"*/`<!--\n  Generated template for the AberturaRequerimentoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Abertura de Requerimento</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-list>\n    <!--criar combobox: https://ionicframework.com/docs/v3/api/components/select/Select/-->\n    <ion-item>\n      <ion-label>Tipo Requerimento</ion-label>\n      <!--Necessario fazer puxar os dados do banco, verificar como fazer webservice para receber os dados-->\n      <ion-select [(ngModel)]="gaming">\n        <ion-option value="nes">NES</ion-option>\n        <ion-option value="n64">Nintendo64</ion-option>\n      </ion-select>\n    </ion-item>\n  </ion-list>\n\n  <ion-item>\n      <ion-label stacked>Documentos Necessários:</ion-label>\n    </ion-item>\n\n\n    <ion-item>\n        <ion-label stacked>Descrição:</ion-label>\n      </ion-item>\n\n  <ion-content>\n\n    <button ion-button margin-right navPop>Cancelar</button>\n\n  </ion-content>\n  <!--\n    \n        <button ion-button margin-left (click)> \n          Salvar\n        </button>-->\n\n</ion-content>`/*ion-inline-end:"/home/gabriel/Documentos/Workspaces/Ionic/DS2/src/pages/abertura-requerimento/abertura-requerimento.html"*/,
+            selector: 'page-abertura-requerimento',template:/*ion-inline-start:"/home/gabriel/Documentos/Workspaces/Ionic/DS2/src/pages/abertura-requerimento/abertura-requerimento.html"*/`<!--\n  Generated template for the AberturaRequerimentoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Abertura de Requerimento</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-list>\n    <!--criar combobox: https://ionicframework.com/docs/v3/api/components/select/Select/-->\n    <ion-item>\n      <ion-label>Tipo Requerimento</ion-label>\n      <!--Necessario fazer puxar os dados do banco, verificar como fazer webservice para receber os dados/video30-->\n      \n      <!--ion-select [(ngModel)]="requerimentos">\n        <ion-option> {{listaRequerimentos[0]}}</ion-option-->\n\n      <ion-select [(ngModel)]="requerimentos">\n        <ion-option *ngFor="let tipoRequerimento of listaRequerimentos" [value]="tipoRequerimento"></ion-option>\n      \n        <!--ion-select *ngFor="let tipoRequerimento of listaRequerimentos">\n        <ion-option [value]="tipoRequerimento"></ion-option-->\n      </ion-select>\n    </ion-item>\n  </ion-list>\n\n  <ion-item>\n      <ion-label stacked>Documentos Necessários:</ion-label>\n      <!--TODO: quando selecionar o tipo d erequerimento carregar essa lista com os documentos referente ao tipo-->\n    </ion-item>\n\n\n    <ion-item>\n        <ion-label stacked>Descrição:</ion-label>\n      </ion-item>\n\n  <ion-content>\n\n    <button ion-button margin-right navPop>\n      Cancelar\n    </button>\n\n  </ion-content>\n  <!--\n    \n        <button ion-button margin-left (click)> \n          Salvar\n        </button>-->\n\n</ion-content>`/*ion-inline-end:"/home/gabriel/Documentos/Workspaces/Ionic/DS2/src/pages/abertura-requerimento/abertura-requerimento.html"*/,
+            providers: [
+                __WEBPACK_IMPORTED_MODULE_3__providers_tipoRequerimentoProvider_tipoRequerimentoProvider__["a" /* TipoRequerimentoProvider */],
+            ]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__providers_tipoRequerimentoProvider_tipoRequerimentoProvider__["a" /* TipoRequerimentoProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_tipoRequerimentoProvider_tipoRequerimentoProvider__["a" /* TipoRequerimentoProvider */]) === "function" && _c || Object])
     ], AberturaRequerimentoPage);
     return AberturaRequerimentoPage;
-    var AberturaRequerimentoPage_1;
+    var AberturaRequerimentoPage_1, _a, _b, _c;
 }());
 
 //# sourceMappingURL=abertura-requerimento.js.map
 
 /***/ }),
 
-/***/ 80:
+/***/ 48:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(49);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(18);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
